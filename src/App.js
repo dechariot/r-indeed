@@ -34,7 +34,7 @@ const ProtectedRoute = ({ component: Component, user, ...rest }) => {
 
 
 function App() {
-  const [user, setUser] = useState({ isAuthenticated: false });
+  const [user, setUser] = useState({ isAuthenticated: true });
   const FourOhFourPage = () => {
     return (
       <div>

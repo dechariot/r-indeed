@@ -5,7 +5,8 @@ import {
     Card,
     ListGroup,
     Container,
-    ListGroupItem
+    ListGroupItem,
+    Nav
 } from "react-bootstrap";
 
 import {
@@ -20,12 +21,14 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import './css/CandidatesPage.css';
+
+import NavBar from '../components/NavBar';
+
 
 
 export default function CandidatesPage() {
     const [candidates, setCandidates] = useState([]);
-
-
 
 
     useEffect(() => {
@@ -40,22 +43,23 @@ export default function CandidatesPage() {
 
     const onDeleteCandidate = id => {
         try {
-          const config = { method: "DELETE" };
-          fetch(`http://localhost:3001/candidates/${id}`, config);
-          const newCandidates = candidates.filter(candidate => candidate.id !== id);
-          setCandidates(newCandidates);
+            const config = { method: "DELETE" };
+            fetch(`http://localhost:3001/candidates/${id}`, config);
+            const newCandidates = candidates.filter(candidate => candidate.id !== id);
+            setCandidates(newCandidates);
         } catch (error) {
-          console.log("Error: ", error);
+            console.log("Error: ", error);
         }
-      };
-      
+    };
+
 
 
 
     return (
-        <div>
+        <Container fluid>
+            <NavBar/>
             <h1>CandidatesPage</h1>
-            <Container fluid>
+            <Container>
                 <Row>
                     {candidates.map(candidate => {
                         return (
@@ -100,6 +104,6 @@ export default function CandidatesPage() {
                     })}
                 </Row>
             </Container>
-        </div>
+        </Container>
     )
 }
