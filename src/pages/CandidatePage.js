@@ -1,11 +1,18 @@
-// import React from 'react'
+import React from 'react'
+import { Row, Col, Container } from "react-bootstrap";
+import CandidateForm from './CandidateForm'
 
-// export default function CandidatePage(props) {
-//     console.log({props})
+export default function CandidatePage(props) {
+    console.log({props})
 
-//     return (
-//         <div>
-//             <h1>CandidatePage</h1>
-//         </div>
-//     )
-// }
+    const {id} = props.match.params;
+return (
+  <Container>
+    <Row>
+      <Col>
+        <CandidateForm id={id} />
+      </Col>
+    </Row>
+  </Container>
+);
+}
