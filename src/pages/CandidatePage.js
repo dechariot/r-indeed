@@ -3,6 +3,9 @@ import { Row, Col, Container } from "react-bootstrap";
 import CandidateForm from '../components/CandidateForm';
 import NavBar from '../components/NavBar';
 
+import './css/CandidatePage.css'
+
+
 export default function CandidatePage(props) {
     console.log({props})
 

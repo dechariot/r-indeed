@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 import { InputGroup, Row, Col, Form, Button, Container } from "react-bootstrap";
+import './css/CandidateForm.css'
+
 
 export default function CandidateForm(props) {
   const [validated, setValidated] = useState(false);

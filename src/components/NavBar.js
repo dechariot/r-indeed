@@ -1,6 +1,9 @@
 import React from 'react';
 import {Nav, Navbar, NavDropdown, Form, FormControl, Button} from 'react-bootstrap';
 
+import './css/NavBar.css'
+
+
 export default function NavBar() {
     return (
         <div>
