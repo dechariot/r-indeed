@@ -3,12 +3,14 @@ import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Switch, Redirect } from "react-router-dom";
+import FourOhFourPage from './components/FourOhFourPage'
 
 //IMPORT PAGES TO APP.JS
 import HomePage from "./pages/HomePage";
 import CandidatesPage from "./pages/CandidatesPage";
 import CandidatePage from "./pages/CandidatePage";
 import CompanyPage from './pages/CompanyPage';
+import { ButtonGroup } from "react-bootstrap";
 
 
 const ProtectedRoute = ({ component: Component, user, ...rest }) => {
@@ -35,11 +37,11 @@ const ProtectedRoute = ({ component: Component, user, ...rest }) => {
 
 function App() {
   const [user, setUser] = useState({ isAuthenticated: true });
-  const FourOhFourPage = () => {
+  const FourOhFourPageError = () => {
     return (
-      <div>
-        <h1>404 Not Found</h1>
-      </div>
+      <>
+      <FourOhFourPage/>
+      </>
     );
   };
   
@@ -59,7 +61,7 @@ function App() {
           user={user}
           path="/candidates/:id"
           component={CandidatePage} />
-          <Route path="*" component={FourOhFourPage} />
+          <Route path="*" component={FourOhFourPageError} />
       </Switch>
     </Router>
   );

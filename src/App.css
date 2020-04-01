@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@400;700&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-family: 'Asap', sans-serif;
+}
+
+/* HomePage */
+#home-page {
+    background: url(./img/hpbg.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+
+/* Nav */
+#basic-navbar-nav {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+
